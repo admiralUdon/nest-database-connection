@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  nest-db-conn:
+    container_name: nest-db-conn
+    image: nest-db-conn:${APP_VERSION}
+    restart: always
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/app
+    platform: "linux/amd64"
+
+  # redis:
+  #   image: redis
+  #   container_name: vtam-redis
+  #   environment:
+  #     - ALLOW_EMPTY_PASSWORD=yes
+  #   ports:
+  #     - 6379:6379
