@@ -16,7 +16,14 @@ async function bootstrap() {
     // app.useStaticAssets(join(__dirname, '..', 'public'));
     // app.useStaticAssets(join(__dirname, '..', 'documentation'));
     // app.setViewEngine('html');
-    
+
+    /**
+     * Set Global Prefix
+     */
+    if (process.env.SERVER_CONTEXT) {
+        app.setGlobalPrefix(process.env.SERVER_CONTEXT);
+    }
+
     /**
      * Enable CORS
      */

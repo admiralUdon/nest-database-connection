@@ -8,7 +8,7 @@ import { RedisModule } from "app/modules/redis/redis.module";
 
 export const appRoutes: Routes = [
     {
-        path: process.env.SERVER_CONTEXT ? (process.env.SERVER_CONTEXT + '/api') : 'api',
+        path: 'api',
         children: [
             { path: 'hello', module: HelloModule },
             { path: 'mssql', module: MsSQLModule },
