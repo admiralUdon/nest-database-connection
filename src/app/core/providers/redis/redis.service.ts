@@ -32,7 +32,6 @@ export class RedisService {
     // @ Public methods
     // -----------------------------------------------------------------------------------------------------
 
-
     async set(key: string, value: string): Promise<void> {
         await this.client.set(key, value);
     }
