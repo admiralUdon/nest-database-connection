@@ -13,11 +13,3 @@ services:
     volumes:
       - ./:/app
     platform: "linux/amd64"
-
-  # redis:
-  #   image: redis
-  #   container_name: vtam-redis
-  #   environment:
-  #     - ALLOW_EMPTY_PASSWORD=yes
-  #   ports:
-  #     - 6379:6379

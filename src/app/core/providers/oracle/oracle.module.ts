@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { OracleService } from 'app/core/services/oracle/oracle.service';
+import { OracleService } from 'app/core/providers/oracle/oracle.service';
 
 @Module({
   exports: [OracleService],

@@ -1,27 +1,27 @@
 import { Controller, Get, HttpStatus, Request } from '@nestjs/common';
-import { PostgresService } from 'app/core/services/postgres/postgres.service';
+import { DatabaseService } from 'app/core/services/database/database.service';
 import { CustomHttpResponse } from 'app/shared/custom/http-response/http-response.service';
 
 @Controller()
-export class PostgresController {
+export class DatabaseController {
 
     constructor(
-        private _postgresService: PostgresService
+        private _databaseService: DatabaseService
     ){
     }
     
     @Get()
     async getHello(@Request() request) {
 
-        const data = await this._postgresService.query("SELECT CURRENT_TIMESTAMP AS TIMESTAMP");
+        const data = await this._databaseService.getTimestamp(request);
         const response = new CustomHttpResponse({
             code: 'OK',
             message: 'API call successfull',
             statusCode: HttpStatus.OK,
-            data: [...data]
+            data
         });
         request.res.statusCode = response.statusCode;
         return response;
-        
+
     }
 }

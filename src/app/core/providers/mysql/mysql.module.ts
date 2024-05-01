@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { MySQLService } from 'app/core/services/mysql/mysql.service';
+import { MySQLService } from 'app/core/providers/mysql/mysql.service';
 
 @Module({
   exports: [MySQLService],
