@@ -4,6 +4,7 @@ import { RouterModule } from '@nestjs/core';
 import { ThrottlerModule } from '@nestjs/throttler';
 import { appRoutes } from 'app.routes';
 import { throttlerConfig } from 'app/config/throttler.config';
+import { CoreService } from 'app/core/core.service';
 import { DatabaseModule } from 'app/modules/database/database.module';
 import { HelloModule } from 'app/modules/hello/hello.module';
 
@@ -18,5 +19,8 @@ import { HelloModule } from 'app/modules/hello/hello.module';
         // Router modules0
         RouterModule.register(appRoutes)
     ],
+    providers: [
+        CoreService
+    ]
 })
 export class AppModule {}
